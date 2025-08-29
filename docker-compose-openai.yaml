@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: docker/challenge-home/Dockerfile
     ports:
-    - 127.0.0.1:${APP_PORT:-15000}:5000
+    - 0.0.0.0:${APP_PORT:-15000}:5000
     environment:
     - AUTH_KEY=${AUTH_KEY}
     - SECRET_KEY=${SECRET_KEY}
@@ -20,7 +20,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4001:4000
+    - 0.0.0.0:14001:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -40,7 +40,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-1/appsettings.json:/app/appsettings.Production.json:ro
@@ -50,7 +50,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4002:4000
+    - 0.0.0.0:14002:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -70,7 +70,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-2/appsettings.json:/app/appsettings.Production.json:ro
@@ -80,7 +80,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4003:4000
+    - 0.0.0.0:14003:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -100,7 +100,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-3/appsettings.json:/app/appsettings.Production.json:ro
@@ -110,7 +110,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4004:4000
+    - 0.0.0.0:14004:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -130,7 +130,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-4/appsettings.json:/app/appsettings.Production.json:ro
@@ -140,7 +140,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4005:4000
+    - 0.0.0.0:14005:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -160,7 +160,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-5/appsettings.json:/app/appsettings.Production.json:ro
@@ -170,7 +170,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4006:4000
+    - 0.0.0.0:14006:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -190,7 +190,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-6/appsettings.json:/app/appsettings.Production.json:ro
@@ -200,7 +200,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4007:4000
+    - 0.0.0.0:14007:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -220,7 +220,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-7/appsettings.json:/app/appsettings.Production.json:ro
@@ -230,7 +230,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4008:4000
+    - 0.0.0.0:14008:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -250,7 +250,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-8/appsettings.json:/app/appsettings.Production.json:ro
@@ -260,7 +260,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4009:4000
+    - 0.0.0.0:14009:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -280,7 +280,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-9/appsettings.json:/app/appsettings.Production.json:ro
@@ -290,7 +290,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4010:4000
+    - 0.0.0.0:14010:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -310,7 +310,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-10/appsettings.json:/app/appsettings.Production.json:ro
@@ -320,7 +320,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4011:4000
+    - 0.0.0.0:14011:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -340,7 +340,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-11/appsettings.json:/app/appsettings.Production.json:ro
@@ -350,7 +350,7 @@ services:
       context: .
       dockerfile: docker/chat-copilot/webapi/Dockerfile
     ports:
-    - 127.0.0.1:4012:4000
+    - 0.0.0.0:14012:4000
     environment:
     # Config for standard OpenAI API
     - KernelMemory__TextGeneratorType=OpenAI
@@ -370,7 +370,7 @@ services:
     - Planner__Model=${OPENAI_TEXT_MODEL}
     - AllowedOrigins=http://localhost:${APP_PORT:-15000}
     - Kestrel__Endpoints__Http__Url=http://0.0.0.0:4000
-    - PrometheusTelemetry__Endpoint=http://0.0.0.0:4001
+    - PrometheusTelemetry__Endpoint=http://0.0.0.0:14001
     - ASPNETCORE_ENVIRONMENT=Production
     volumes:
     - ./docker/data/chat-copilot-12/appsettings.json:/app/appsettings.Production.json:ro
