@@ -11,7 +11,7 @@ set +a
 export APP_PORT="${PORT:-${APP_PORT:-15000}}"
 
 # Resolve public IP (fallback to localhost if curl fails)
-PUBLIC_IP="$(curl -fsS ifconfig.io || true)"
+PUBLIC_IP="$(curl -4 -fsS ifconfig.io || true)"
 if [[ -z "$PUBLIC_IP" ]]; then
   PUBLIC_IP="localhost"
 fi
